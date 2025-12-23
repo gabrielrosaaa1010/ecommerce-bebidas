@@ -21,7 +21,7 @@ export const products: Product[] = [
     originalPrice: 199.90,
     promoPrice: 59.97,
     discount: 70,
-    image: 'https://casalisboa.com.br/produto/whisky-johny-walker-black-label-750ml/,
+    image: 'https://casalisboa.com.br/produto/whisky-johny-walker-black-label-750ml/',
     description: 'Whisky escocês premium envelhecido por 12 anos',
     slug: 'johnnie-walker-black-label'
   },
@@ -33,7 +33,7 @@ export const products: Product[] = [
     originalPrice: 179.90,
     promoPrice: 53.97,
     discount: 70,
-    image: 'https://www.costibebidas.com.br/whisky-jack-daniels-700ml?srsltid=AfmBOoq3TEQBsSPGPKRykcXP0WyW9h4OnXxx25G8filqrS2JD8NMOOZX,
+    image: 'https://www.costibebidas.com.br/whisky-jack-daniels-700ml?srsltid=AfmBOoq3TEQBsSPGPKRykcXP0WyW9h4OnXxx25G8filqrS2JD8NMOOZX',
     description: 'Tennessee Whiskey autêntico e suave',
     slug: 'jack-daniels-old-no7'
   },
@@ -45,7 +45,7 @@ export const products: Product[] = [
     originalPrice: 219.90,
     promoPrice: 65.97,
     discount: 70,
-    image: 'https://www.costibebidas.com.br/whisky-chivas-regal-12-anos-1l?srsltid=AfmBOooTZ2M06HwXjf6LaRLvEdFu5Pprj8ip9de9-XQY0gZ13Or7lPHJ,
+    image: 'https://www.costibebidas.com.br/whisky-chivas-regal-12-anos-1l?srsltid=AfmBOooTZ2M06HwXjf6LaRLvEdFu5Pprj8ip9de9-XQY0gZ13Or7lPHJ',
     description: 'Whisky escocês blend premium 12 anos',
     slug: 'chivas-regal-12-anos'
   },
@@ -57,7 +57,7 @@ export const products: Product[] = [
     originalPrice: 149.90,
     promoPrice: 44.97,
     discount: 70,
-    image: 'https://www.dinhobebidas.com.br/destilados/whisky/whisky-importado/whisky-ballantines-finest-1000ml?srsltid=AfmBOooPLJq-oiphp7vjbXjwhxa_KAxSqYM3b1BVIdm38NrQmv6qppth,
+    image: 'https://www.dinhobebidas.com.br/destilados/whisky/whisky-importado/whisky-ballantines-finest-1000ml?srsltid=AfmBOooPLJq-oiphp7vjbXjwhxa_KAxSqYM3b1BVIdm38NrQmv6qppth',
     description: 'Whisky escocês blend suave e equilibrado',
     slug: 'ballantines-finest'
   },
@@ -70,7 +70,7 @@ export const products: Product[] = [
     originalPrice: 139.90,
     promoPrice: 41.97,
     discount: 70,
-    image: 'https://mercado.carrefour.com.br/gin-tanqueray-london-dry-750ml-160210/p,
+    image: 'https://mercado.carrefour.com.br/gin-tanqueray-london-dry-750ml-160210/p',
     description: 'Gin premium com notas cítricas e botânicos',
     slug: 'tanqueray-london-dry'
   },
@@ -82,7 +82,7 @@ export const products: Product[] = [
     originalPrice: 129.90,
     promoPrice: 38.97,
     discount: 70,
-    image: 'https://www.ofertinha.com.br/gin-bombay-sapphire-dry-london-750-ml/,
+    image: 'https://www.ofertinha.com.br/gin-bombay-sapphire-dry-london-750-ml/',
     description: 'Gin com 10 botânicos exóticos',
     slug: 'bombay-sapphire'
   },
@@ -94,7 +94,7 @@ export const products: Product[] = [
     originalPrice: 119.90,
     promoPrice: 35.97,
     discount: 70,
-    image: 'https://www.superkoch.com.br/gin-beefeater-london-dry-750ml-32886?srsltid=AfmBOorP7_oJIm1qjt5tEgktdfRqm6M7DM1BCovQxZ7CXoU3wCCMO8oZ,
+    image: 'https://www.superkoch.com.br/gin-beefeater-london-dry-750ml-32886?srsltid=AfmBOorP7_oJIm1qjt5tEgktdfRqm6M7DM1BCovQxZ7CXoU3wCCMO8oZ',
     description: 'Gin clássico de Londres',
     slug: 'beefeater-london-dry'
   },
@@ -107,7 +107,7 @@ export const products: Product[] = [
     originalPrice: 4.99,
     promoPrice: 1.49,
     discount: 70,
-    image: 'https://www.arenaatacado.com.br/Cerveja-Heineken-Lata-350ml-988391.html,
+    image: 'https://www.arenaatacado.com.br/Cerveja-Heineken-Lata-350ml-988391.html',
     description: 'Cerveja premium holandesa',
     slug: 'heineken-lata'
   },
@@ -119,7 +119,7 @@ export const products: Product[] = [
     originalPrice: 4.79,
     promoPrice: 1.43,
     discount: 70,
-    image: 'https://www.amazon.com.br/Cerveja-Budweiser-Long-Neck-330ml/dp/B07Y29XWKT,
+    image: 'https://www.amazon.com.br/Cerveja-Budweiser-Long-Neck-330ml/dp/B07Y29XWKT',
     description: 'Cerveja americana clássica',
     slug: 'budweiser-lata'
   },
@@ -131,7 +131,7 @@ export const products: Product[] = [
     originalPrice: 6.99,
     promoPrice: 2.09,
     discount: 70,
-    image: 'https://www.armazemdamaria.com.br/loja-1/produto/m/cerveja-stella-artois-long-neck-330ml-pure-gold-124041?srsltid=AfmBOoqZR0jYQa82IIMDOepe_jF58Y8nyjmg6c9dx03s9qi3w-QeyJyz,
+    image: 'https://www.armazemdamaria.com.br/loja-1/produto/m/cerveja-stella-artois-long-neck-330ml-pure-gold-124041?srsltid=AfmBOoqZR0jYQa82IIMDOepe_jF58Y8nyjmg6c9dx03s9qi3w-QeyJyz',
     description: 'Cerveja belga premium',
     slug: 'stella-artois-long-neck'
   }
