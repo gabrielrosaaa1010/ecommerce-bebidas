@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { Gift, Trophy, ChevronDown, ChevronUp } from 'lucide-react';
+import { Gift, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function SorteioSection() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -18,7 +18,7 @@ export default function SorteioSection() {
             <Gift className="w-10 h-10 text-yellow-400 flex-shrink-0" />
             <div className="text-left">
               <h2 className="text-xl md:text-2xl font-bold">
-                COMPRE E CONCORRA A UM ROYAL SALUTE
+                COMPRE E CONCORRA A UM BLACK LABEL
               </h2>
               <p className="text-sm md:text-base">
                 Compre, indique um amigo e ambos concorrem ao prêmio
@@ -26,7 +26,11 @@ export default function SorteioSection() {
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <Trophy className="w-12 h-12 md:w-16 md:h-16 text-yellow-400 flex-shrink-0" />
+            <img 
+              src="https://k6hrqrxuu8obbfwn.public.blob.vercel-storage.com/temp/646ce6df-85f3-4bfb-84cd-012b0f2f8ac6.jpg" 
+              alt="Johnnie Walker Black Label" 
+              className="w-12 h-12 md:w-16 md:h-16 object-cover hover:scale-105 transition-transform duration-300 rounded-lg shadow-lg flex-shrink-0"
+            />
             {isExpanded ? (
               <ChevronUp className="w-6 h-6 text-yellow-400" />
             ) : (
@@ -58,7 +62,7 @@ export default function SorteioSection() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-yellow-400 font-bold">5.</span>
-                <span>Prêmio: 1 garrafa de Royal Salute 21 anos (valor R$ 1.200,00)</span>
+                <span>Prêmio: 1 garrafa de Johnnie Walker Black Label (valor R$ 150,00)</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-yellow-400 font-bold">6.</span>
