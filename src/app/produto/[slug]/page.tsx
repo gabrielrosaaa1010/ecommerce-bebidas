@@ -6,9 +6,21 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { getProductBySlug } from '@/lib/products';
-import { addToCart } from '@/lib/cart';
-import { ShoppingCart, Truck, Shield, ArrowLeft } from 'lucide-react';
-import { toast } from 'sonner';
+import { Truck, Shield, ArrowLeft, ShoppingCart } from 'lucide-react';
+
+// 🔥 MAPA DE LINKS PERFECTPAY POR SLUG
+const PERFECTPAY_LINKS: Record<string, string> = {
+  'black-label': 'https://go.perfectpay.com.br/PPU38CQ56EI',
+  'jack-daniels': 'https://go.perfectpay.com.br/PPU38CQ56EQ',
+  'chivas-regal': 'https://go.perfectpay.com.br/PPU38CQ56EU',
+  'ballantines': 'https://go.perfectpay.com.br/PPU38CQ56F1',
+  'tanqueray': 'https://go.perfectpay.com.br/PPU38CQ56F3',
+  'bombay': 'https://go.perfectpay.com.br/PPU38CQ56F5',
+  'beefeater': 'https://go.perfectpay.com.br/PPU38CQ56F8',
+  'heineken': 'https://go.perfectpay.com.br/PPU38CQ56FB',
+  'budweiser': 'https://go.perfectpay.com.br/PPU38CQ56FD',
+  'stella': 'https://go.perfectpay.com.br/PPU38CQ56FI',
+};
 
 export default function ProductPage() {
   const params = useParams();
@@ -30,10 +42,8 @@ export default function ProductPage() {
     );
   }
 
-  const handleAddToCart = () => {
-    addToCart(product);
-    toast.success(`${product.name} adicionado ao carrinho!`);
-  };
+  // 🔥 LINK FINAL DO CHECKOUT
+  const checkoutLink = PERFECTPAY_LINKS[slug];
 
   return (
     <div className="min-h-screen bg-[#EAEDED]">
@@ -47,7 +57,7 @@ export default function ProductPage() {
 
         <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Imagem do produto */}
+            {/* Imagem */}
             <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
               <Image
                 src={product.image}
@@ -61,103 +71,47 @@ export default function ProductPage() {
               </div>
             </div>
 
-            {/* Informações do produto */}
+            {/* Infos */}
             <div className="flex flex-col">
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+              <h1 className="text-3xl md:text-4xl font-bold mb-2">
                 {product.name}
               </h1>
-              <p className="text-xl text-gray-600 mb-4">{product.volume}</p>
+
               <p className="text-gray-700 mb-6">{product.description}</p>
 
-              {/* Preços */}
+              {/* Preço */}
               <div className="bg-gray-50 rounded-lg p-6 mb-6">
-                <div className="flex items-baseline gap-3 mb-2">
-                  <span className="text-sm text-gray-500">De:</span>
-                  <span className="text-xl text-gray-500 line-through">
-                    R$ {product.originalPrice.toFixed(2).replace('.', ',')}
-                  </span>
+                <span className="text-xl line-through text-gray-500">
+                  R$ {product.originalPrice.toFixed(2).replace('.', ',')}
+                </span>
+                <div className="text-4xl font-bold text-red-600">
+                  R$ {product.promoPrice.toFixed(2).replace('.', ',')}
                 </div>
-                <div className="flex items-baseline gap-3 mb-2">
-                  <span className="text-sm text-gray-700">Por:</span>
-                  <span className="text-4xl font-bold text-red-600">
-                    R$ {product.promoPrice.toFixed(2).replace('.', ',')}
-                  </span>
-                </div>
-                <p className="text-green-700 font-bold text-lg">
-                  Economize R$ {(product.originalPrice - product.promoPrice).toFixed(2).replace('.', ',')} ({product.discount}%)
-                </p>
               </div>
 
               {/* Benefícios */}
               <div className="space-y-3 mb-6">
-                <div className="flex items-center gap-3 text-gray-700">
+                <div className="flex items-center gap-2">
                   <Truck className="w-5 h-5 text-green-600" />
-                  <span>Entrega em até 3 dias úteis</span>
+                  Entrega rápida
                 </div>
-                <div className="flex items-center gap-3 text-gray-700">
+                <div className="flex items-center gap-2">
                   <Shield className="w-5 h-5 text-green-600" />
-                  <span>Compra 100% segura</span>
-                </div>
-                <div className="flex items-center gap-3 text-gray-700">
-                  <ShoppingCart className="w-5 h-5 text-green-600" />
-                  <span>Frete grátis acima de R$ 100</span>
+                  Pagamento seguro
                 </div>
               </div>
 
-              {/* Botão adicionar ao carrinho */}
-              <button
-                onClick={handleAddToCart}
-                className="w-full bg-[#FF9900] hover:bg-[#F08000] text-black font-bold py-4 px-6 rounded-lg transition-colors flex items-center justify-center gap-3 text-lg mb-4"
-              >
-                <ShoppingCart className="w-6 h-6" />
-                Adicionar ao Carrinho
-              </button>
-
-              <Link
-                href="/carrinho"
-                className="w-full bg-[#FFD814] hover:bg-[#F7CA00] text-black font-bold py-4 px-6 rounded-lg transition-colors text-center"
-              >
-                Comprar Agora
-              </Link>
-
-              {/* Sorteio */}
-              <div className="mt-6 bg-purple-50 border-2 border-purple-500 rounded-lg p-4">
-                <p className="text-purple-900 font-bold text-center">
-                  🎁 Comprando este produto você concorre a um Royal Salute!
-                </p>
-              </div>
+              {/* 🔥 BOTÃO FINAL — DIRECT CHECKOUT */}
+              {checkoutLink && (
+                <a
+                  href={checkoutLink}
+                  className="w-full bg-[#FFD814] hover:bg-[#F7CA00] text-black font-bold py-4 px-6 rounded-lg transition-colors text-center flex items-center justify-center gap-3 text-lg"
+                >
+                  <ShoppingCart className="w-6 h-6" />
+                  Comprar Agora
+                </a>
+              )}
             </div>
-          </div>
-
-          {/* Informações adicionais */}
-          <div className="mt-8 border-t pt-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Informações do Produto</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <h3 className="font-bold text-gray-900 mb-2">Especificações</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li><strong>Volume:</strong> {product.volume}</li>
-                  <li><strong>Categoria:</strong> {product.category === 'whisky' ? 'Whisky' : product.category === 'gin' ? 'Gin' : 'Cerveja'}</li>
-                  <li><strong>Origem:</strong> Importado</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-bold text-gray-900 mb-2">Entrega e Garantia</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>✓ Entrega expressa em até 3 dias úteis</li>
-                  <li>✓ Embalagem segura e lacrada</li>
-                  <li>✓ Garantia de qualidade Amazon</li>
-                  <li>✓ Devolução grátis em 30 dias</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Aviso legal */}
-          <div className="mt-8 bg-yellow-50 border-2 border-yellow-400 rounded-lg p-4 text-center">
-            <p className="text-gray-900 font-bold">
-              ⚠️ Venda proibida para menores de 18 anos. Beba com moderação.
-            </p>
           </div>
         </div>
       </main>
@@ -166,3 +120,4 @@ export default function ProductPage() {
     </div>
   );
 }
+
