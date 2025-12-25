@@ -9,6 +9,7 @@ export interface Product {
   image: string;
   description: string;
   slug: string;
+  affiliateLink: string;
 }
 
 export const products: Product[] = [
@@ -23,7 +24,8 @@ export const products: Product[] = [
     discount: 70,
     image: 'https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=400&h=600&fit=crop',
     description: 'Whisky escocês premium envelhecido por 12 anos',
-    slug: 'johnnie-walker-black-label'
+    slug: 'johnnie-walker-black-label',
+    affiliateLink: 'SEU_LINK_JOHNNIE_WALKER_BLACK_LABEL'
   },
   {
     id: 'jack-daniels',
@@ -35,7 +37,8 @@ export const products: Product[] = [
     discount: 70,
     image: 'https://images.unsplash.com/photo-1569529465841-dfecdab7503b?w=400&h=600&fit=crop',
     description: 'Tennessee Whiskey autêntico e suave',
-    slug: 'jack-daniels-old-no7'
+    slug: 'jack-daniels-old-no7',
+    affiliateLink: 'SEU_LINK_JACK_DANIELS'
   },
   {
     id: 'chivas-12',
@@ -47,7 +50,8 @@ export const products: Product[] = [
     discount: 70,
     image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&h=600&fit=crop',
     description: 'Whisky escocês blend premium 12 anos',
-    slug: 'chivas-regal-12-anos'
+    slug: 'chivas-regal-12-anos',
+    affiliateLink: 'SEU_LINK_CHIVAS_12'
   },
   {
     id: 'ballantines',
@@ -59,7 +63,8 @@ export const products: Product[] = [
     discount: 70,
     image: 'https://images.unsplash.com/photo-1582818969857-caa0e3c9e738?w=400&h=600&fit=crop',
     description: 'Whisky escocês blend suave e equilibrado',
-    slug: 'ballantines-finest'
+    slug: 'ballantines-finest',
+    affiliateLink: 'SEU_LINK_BALLANTINES'
   },
   // GIN
   {
@@ -72,7 +77,8 @@ export const products: Product[] = [
     discount: 70,
     image: 'https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=400&h=600&fit=crop',
     description: 'Gin premium com notas cítricas e botânicos',
-    slug: 'tanqueray-london-dry'
+    slug: 'tanqueray-london-dry',
+    affiliateLink: 'SEU_LINK_TANQUERAY'
   },
   {
     id: 'bombay',
@@ -84,7 +90,8 @@ export const products: Product[] = [
     discount: 70,
     image: 'https://images.unsplash.com/photo-1613588991426-9f0e4b4c2e2e?w=400&h=600&fit=crop',
     description: 'Gin com 10 botânicos exóticos',
-    slug: 'bombay-sapphire'
+    slug: 'bombay-sapphire',
+    affiliateLink: 'SEU_LINK_BOMBAY'
   },
   {
     id: 'beefeater',
@@ -96,7 +103,8 @@ export const products: Product[] = [
     discount: 70,
     image: 'https://images.unsplash.com/photo-1615332579937-4e1b6e6c9f2d?w=400&h=600&fit=crop',
     description: 'Gin clássico de Londres',
-    slug: 'beefeater-london-dry'
+    slug: 'beefeater-london-dry',
+    affiliateLink: 'SEU_LINK_BEEFEATER'
   },
   // CERVEJAS
   {
@@ -109,7 +117,8 @@ export const products: Product[] = [
     discount: 70,
     image: 'https://images.unsplash.com/photo-1608270586620-248524c67de9?w=400&h=600&fit=crop',
     description: 'Cerveja premium holandesa',
-    slug: 'heineken-lata'
+    slug: 'heineken-lata',
+    affiliateLink: 'SEU_LINK_HEINEKEN'
   },
   {
     id: 'budweiser',
@@ -121,7 +130,8 @@ export const products: Product[] = [
     discount: 70,
     image: 'https://images.unsplash.com/photo-1618885472179-5e474019f2a9?w=400&h=600&fit=crop',
     description: 'Cerveja americana clássica',
-    slug: 'budweiser-lata'
+    slug: 'budweiser-lata',
+    affiliateLink: 'SEU_LINK_BUDWEISER'
   },
   {
     id: 'stella',
@@ -133,7 +143,8 @@ export const products: Product[] = [
     discount: 70,
     image: 'https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=400&h=600&fit=crop',
     description: 'Cerveja belga premium',
-    slug: 'stella-artois-long-neck'
+    slug: 'stella-artois-long-neck',
+    affiliateLink: 'SEU_LINK_STELLA'
   }
 ];
 

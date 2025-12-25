@@ -3,20 +3,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Product } from '@/lib/products';
-import { addToCart } from '@/lib/cart';
-import { ShoppingCart } from 'lucide-react';
-import { toast } from 'sonner';
+import { ShoppingBag } from 'lucide-react';
 
 interface ProductCardProps {
   product: Product;
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const handleAddToCart = () => {
-    addToCart(product);
-    toast.success(`${product.name} adicionado ao carrinho!`);
-  };
-
   return (
     <div className="bg-white rounded-lg shadow hover:shadow-xl transition-shadow p-4 flex flex-col h-full">
       <Link href={`/produto/${product.slug}`} className="block">
@@ -55,13 +48,26 @@ export default function ProductCard({ product }: ProductCardProps) {
             ✓ Entrega em até 3 dias úteis
           </p>
 
-          <button
-            onClick={handleAddToCart}
+          {/* Observação sobre limite de compra */}
+          <div className="bg-yellow-50 border border-yellow-300 rounded p-2 mb-3">
+            <p className="text-xs text-gray-700 text-center">
+              ⚠️ Limite de 1 produto por compra
+              <br />
+              <span className="text-[10px] text-gray-600">
+                (É possível fazer várias compras)
+              </span>
+            </p>
+          </div>
+
+          <Link
+            href={product.affiliateLink}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full bg-[#FF9900] hover:bg-[#F08000] text-black font-bold py-2 px-4 rounded transition-colors flex items-center justify-center gap-2"
           >
-            <ShoppingCart className="w-4 h-4" />
-            Adicionar ao Carrinho
-          </button>
+            <ShoppingBag className="w-4 h-4" />
+            Comprar Agora
+          </Link>
         </div>
       </div>
     </div>
